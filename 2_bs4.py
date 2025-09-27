@@ -75,7 +75,9 @@ if scraped_reviews:
     print(f"\nSuccessfully scraped {len(scraped_reviews)} reviews.")
     df = pd.DataFrame(scraped_reviews, columns=['review_text'])
     print(df.head(10))
-    # Optional: Save to CSV
-    # df.to_csv('flipkart_reviews_all.csv', index=False)
+   # Save the DataFrame to a CSV file
+    output_filename = 'sony_tv.csv'
+    df.to_csv(output_filename, index=False, encoding='utf-8')
+    print(f"\nSaved all reviews to '{output_filename}'")
 else:
     print("\nNo reviews were scraped.")
